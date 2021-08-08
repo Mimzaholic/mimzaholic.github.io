@@ -49,3 +49,7 @@ a:link {
   a:hover {
     background: #1B2A41;
   }
+
+  a:active {
+      color: gold
+  }
