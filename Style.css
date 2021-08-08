@@ -37,6 +37,7 @@ a:link {
     padding-bottom: 5px;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
   }
   
   /* visited link */
