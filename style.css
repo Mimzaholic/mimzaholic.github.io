@@ -16,7 +16,9 @@
   .header {
     padding: 30px;
     text-align: center;
-    background: white;
+    background: #c9c9c9;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
   }
   
   .header h1 {
@@ -72,7 +74,7 @@
   
   /* Add a card effect for articles */
   .card {
-    background-color: white;
+    background-color: #ddd;
     padding: 20px;
     margin-top: 20px;
   }
@@ -121,6 +123,8 @@
       background: #ddd;
       margin-top: 20px;
       font-size: 12px;
+      border-bottom-left-radius: 15%;
+      border-bottom-right-radius: 15%;
     }
     
   
