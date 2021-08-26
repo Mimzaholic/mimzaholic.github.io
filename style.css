@@ -1,9 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: normal;
   }
   
   body {
-    font-family: Arial;
     padding: 10px;
     background-image: url("moon.png");
     background-repeat: no-repeat;
@@ -23,6 +24,8 @@
   
   .header h1 {
     font-size: 50px;
+    font-variant: small-caps;
+    font-weight: bolder;
   }
   
   /* Style the top navigation bar */
@@ -42,7 +45,11 @@
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: none;    
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
   }
   
   /* Change color on hover */
@@ -97,7 +104,6 @@
   }
   
   .card a {
-    font-family: "GameOver", sans-serif;
     color: #324A5F;
     text-decoration: none;
     padding: 5px
@@ -127,7 +133,15 @@
       border-bottom-left-radius: 15%;
       border-bottom-right-radius: 15%;
     }
-    
+
+ul {
+  margin: 0;
+}
+
+ul li {
+  list-style-type: square;
+
+}
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 800px) {
