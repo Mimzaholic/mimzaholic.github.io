@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: normal;
   }
   
   body {
@@ -92,6 +91,23 @@
     .cardImg img {
       width: 100%; 
       height: auto;
+  }
+
+  .manphoto img {
+    margin-top: 50px;
+    max-height: 300px;
+  }
+
+  .manbio h3 {
+    margin: 0;
+    font-style: small-caps;
+  }
+
+  .manbio h4 {
+    margin: 0;
+    font-style: small-caps;
+    color: #324A5F;
+
   }
 
   .logo img {
