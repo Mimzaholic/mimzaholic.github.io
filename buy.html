@@ -6,13 +6,14 @@
   <meta name="keywords" content="Eve, Eve Online, Corp, Corporation">
   <meta name="author" content="Russell Mizer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="img/jpg" href="logo.jpg">
 <!--Load fonts here -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap" rel="stylesheet">
 <!--Load the CSS file here-->
   <link rel="stylesheet" href="style.css">
-  <title>&#9935; Miner's Inn &#9878;</title>
+  <title>Miner's Inn</title>
 </head>
 <body>
   <div class="header">
@@ -30,20 +31,39 @@
     <div class="leftcolumn">
 <!--Buy Form-->
       <div class="card">
-        <h2>The Calpoolator</h2>
         <div class="buyForm"></div>
-        <form action="buy.html" method="GET" autocomplete="on">
-          <label for="character">Choose a Character:</label>
-          <select id="character" name="character">
-            <option value="heinrik">Heinrik Liat Cadelanne</option>
-            <option value="two">Test2</option>
-            <option value="three">Test3</option>
-            <option value="four">Test4</option>
-          </select><br>
-          <label for="pooPaste">Paste your Poo here</label>
-          <textarea id="pooPaste" name="pooPaste" rows="5" cols="30">Test area</textarea>
-          <button type="button" onclick="alert('WHATER YA DOING?!')">Don't touch this!</button>
-        </form>
+          <h2>Buy things from us...</h2>
+          <form action="buy.html" method="GET">
+            <label for="trit">Tritanium (3.82 ISK)</label><br>
+            <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0"><br>
+            <label for="py">Pyerite (14.85 ISK)</label><br>
+            <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0"><br>
+            <label for="mex">Mexallon (47.32 ISK)</label><br>
+            <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0"><br><br>
+            <button type="button" onclick="priceCalc()">Calculate</button>
+            <input type="reset"><br><br>
+            <div id="output"></div>
+          </form>
+          <script>
+            const TRITISK = 3.82;
+            const PYISK = 14.85;
+            const MEXISK = 47.32;
+            var answer
+
+            function priceCalc() {
+              let tritQty = parseInt(document.querySelector("#trit").value);
+              let pyQty = parseInt(document.querySelector("#py").value);
+              let mexQty = parseInt(document.querySelector("#mex").value);
+              let tritTot = tritQty * TRITISK;
+              let pyTot = pyQty * PYISK;
+              let mexTot = mexQty * MEXISK;
+              let grandTot = tritTot + pyTot + mexTot
+              answer = "Tritanium: (" + tritQty + ")   " + tritTot.toFixed(2) + " ISK<br>Pyerite: (" + pyQty + ")   " + pyTot.toFixed(2) + " ISK<br>Mexallon: (" + mexQty + ")   " + mexTot.toFixed(2) + " ISK<br><strong>Grand Total: " + grandTot + " ISK</strong><br><br>Copy and paste this into an Eve-Mail to <a href='faq.html#OldGuyMonty'>OldGuyMonty</a> ";
+              document.querySelector("#output").innerHTML = answer;
+            }
+
+          </script>
+          
       </div>
     </div>
 <!--Right Column-->  
