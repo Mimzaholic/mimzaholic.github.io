@@ -6,7 +6,7 @@
   <meta name="keywords" content="Eve, Eve Online, Corp, Corporation">
   <meta name="author" content="Russell Mizer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="img/jpg" href="logo.jpg">
+  <link rel="shortcut icon" type="img/png" href="pickaxe.png">
 <!--Load fonts here -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,12 @@
         <div class="buyForm"></div>
           <h2>Buy things from us...</h2>
           <form action="buy.html" method="GET">
+            <label for="userSelector">Select User</label><br>
+            <select name="userSelector" id="userSelector">
+              <option value="SELECT A USER"></option>
+              <option value="Heinrik Liat Cadelanne">Heinrik Liat Cadelanne</option>
+              <option value="christiaanja">christiaanja</option>
+            </select><br>
             <label for="trit">Tritanium (3.82 ISK)</label><br>
             <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0"><br>
             <label for="py">Pyerite (14.85 ISK)</label><br>
@@ -42,7 +48,7 @@
             <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0"><br><br>
             <button type="button" onclick="priceCalc()">Calculate</button>
             <input type="reset"><br><br>
-            <div id="output"></div>
+            <div id="output"><textarea name="" cols="30" rows="10"></textarea></div>
           </form>
           <script>
             const TRITISK = 3.82;
@@ -51,6 +57,7 @@
             var answer
 
             function priceCalc() {
+              let char = document.querySelector("#userSelector").value;
               let tritQty = parseInt(document.querySelector("#trit").value);
               let pyQty = parseInt(document.querySelector("#py").value);
               let mexQty = parseInt(document.querySelector("#mex").value);
@@ -58,7 +65,7 @@
               let pyTot = pyQty * PYISK;
               let mexTot = mexQty * MEXISK;
               let grandTot = tritTot + pyTot + mexTot
-              answer = "Tritanium: (" + tritQty + ")   " + tritTot.toFixed(2) + " ISK<br>Pyerite: (" + pyQty + ")   " + pyTot.toFixed(2) + " ISK<br>Mexallon: (" + mexQty + ")   " + mexTot.toFixed(2) + " ISK<br><strong>Grand Total: " + grandTot + " ISK</strong><br><br>Copy and paste this into an Eve-Mail to <a href='faq.html#OldGuyMonty'>OldGuyMonty</a> ";
+              answer ="<strong>" + char + "</strong><br>Tritanium: (" + tritQty + ")   " + tritTot.toFixed(2) + " ISK<br>Pyerite: (" + pyQty + ")   " + pyTot.toFixed(2) + " ISK<br>Mexallon: (" + mexQty + ")   " + mexTot.toFixed(2) + " ISK<br><strong>Grand Total: " + grandTot + " ISK</strong><br><br>Copy and paste this into an Eve-Mail to <a href='faq.html#mimz'>Heinrik Liat Cadelanne</a> ";
               document.querySelector("#output").innerHTML = answer;
             }
 
@@ -94,6 +101,7 @@
   <div class="footer">
     <p>&#169; Russell Mizer <br>
     <ul><li>Discord: Mimzaholic#4357</li>
+      <li><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></li>
     </ul></p>
   </div>
 </body>
