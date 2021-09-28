@@ -33,16 +33,9 @@
         <h2>Sell us your stuff...</h2>
         <div class="buyForm"></div>
         <form>
-          <label for="val1">Value 1: </label> <input type="number" id="val1">
-          <label for="val2">Value 2: </label> <input type="number" id="val2">
-          <label for="op">Operator: </label>
-          <select id="op">
-            <option value="add">+</option>
-            <option value="sub">-</option>
-            <option value="mul">*</option>
-            <option value="dvd">/</option>
-          </select>
-          <button type="button" onclick="calc()">=</button>
+          <label for="val1">Paste your loot history or List view here:</label><br>
+          <textarea name="userinpt" id="userinpt" cols="43" rows="4"></textarea><br>
+          <button type="button" onclick="sellCalc()">Calculate</button>
           <button type="reset">Reset</button>
         </form>
         <div class="result" id="result"></div>
@@ -78,5 +71,5 @@
     </ul></p>
   </div>
 </body>
-<script src="calc.js"></script>
+<script src="sellCalc.js"></script>
 </html>
