@@ -140,8 +140,14 @@
             <label for="mex">Mexallon (47.32 ISK/unit)</label><br>
             <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0"><br><br>
             <button type="button" onclick="priceCalc()">Calculate</button>
-            <input type="reset"><br><br>
-            <div id="output"></div>
+            <input type="reset" onclick="reset()"><br><br>
+            <div id="output"><strong>SELECT A USER</strong><br>
+              Tritanium: (0) units 0.00 ISK <br>
+              Pyerite: (0) units 0.00 ISK <br>
+              Mexallon: (0) units 0.00 ISK <br>
+              <strong>Grand Total: 0.00 ISK</strong></div><br>
+            <textarea name="cpy" id="cpy" cols="30" rows="4"></textarea><br>
+            <button type="button" onclick="copyData()">Copy</button>  
           </form>
           <script>
             const TRITISK = 3.82;
@@ -158,8 +164,31 @@
               let pyTot = pyQty * PYISK;
               let mexTot = mexQty * MEXISK;
               let grandTot = tritTot + pyTot + mexTot
-              answer ="<strong>" + char + "</strong><br>Tritanium: (" + tritQty + ")   " + tritTot.toFixed(2) + " ISK<br>Pyerite: (" + pyQty + ")   " + pyTot.toFixed(2) + " ISK<br>Mexallon: (" + mexQty + ")   " + mexTot.toFixed(2) + " ISK<br><strong>Grand Total: " + grandTot + " ISK</strong><br><br>Copy and paste this into an Eve-Mail to <a href='faq.html#mimz'>Heinrik Liat Cadelanne</a> ";
+              answer ="<strong>" + char + "</strong><br>Tritanium: (" + tritQty + ") units   " + tritTot.toFixed(2) + " ISK<br>Pyerite: (" + pyQty + ") units   " + pyTot.toFixed(2) + " ISK<br>Mexallon: (" + mexQty + ") units   " + mexTot.toFixed(2) + " ISK<br><strong>Grand Total: " + grandTot.toFixed(2) + " ISK</strong><br><br>Copy and paste this into an Eve-Mail to <a href='faq.html#mimz'>Heinrik Liat Cadelanne</a> ";
+              cpyanswer = char + " Trit:" + tritQty + " Pye:" + pyQty + " Mex:" + mexQty + " Contract Total:" + grandTot.toFixed(2);
+
+              if (char != "SELECT A USER") {
+                document.querySelector("#output").innerHTML = answer;
+                document.querySelector("#cpy").innerHTML = cpyanswer;  
+              } else {
+                alert("Please select your character")
+              }
               document.querySelector("#output").innerHTML = answer;
+              document.querySelector("#cpy").innerHTML = cpyanswer;
+            }
+
+            /*  reset function below does not work
+            function reset() {
+              document.querySelector("#cpy").innerHTML.value = " ";
+            }
+            */
+
+            function copyData() {
+              var copyText = document.getElementById("cpy");
+              copyText.select();
+              copyText.setSelectionRange(0, 99999); /* For mobile devices */
+              navigator.clipboard.writeText(copyText.value);
+              alert("Copied the text: " + copyText.value);
             }
 
           </script>
