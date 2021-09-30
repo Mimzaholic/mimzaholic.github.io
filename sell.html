@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Miner's Inn</title>
 </head>
-<body>
+<body  onload="itemDisplay()">
   <div class="header">
     <h1>Miner's Inn</h1>
     <p><strong>The new official website.</strong></p>
@@ -31,13 +31,9 @@
     <div class="leftcolumn">
       <div class="card">
         <h2>Sell us your stuff...</h2>
+        <div id="dispItems"></div>
         <div class="buyForm"></div>
-        <form>
-          <label for="val1">Paste your loot history or List view here:</label><br>
-          <textarea name="userinpt" id="userinpt" cols="43" rows="4"></textarea><br>
-          <button type="button" onclick="sellCalc()">Calculate</button>
-          <button type="reset">Reset</button>
-        </form>
+
         <div class="result" id="result"></div>
       </div>
     </div>  
