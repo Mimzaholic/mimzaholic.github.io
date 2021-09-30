@@ -29,8 +29,6 @@ function itemDisplay() {
 
 //Calculator
 function option2() {
-    let char = prompt("Enter your Character's Name");
-
     let veldQty = parseInt(document.getElementById("veld1").value);
     let conveldQty = parseInt(document.getElementById("veld2").value);
     let denveldQty = parseInt(document.getElementById("veld3").value);
@@ -58,7 +56,7 @@ function option2() {
     let grandTot = veldTot + conveldTot + denveldTot + scorTot + conscorTot + mascorTot + pyroTot + solpyroTot + vispyroTot;
     
 
-    alert(char + ": " + grandTot.toFixed(2) + " ISK")
+    alert(grandTot.toFixed(2) + " ISK")
 }
 
 /*
