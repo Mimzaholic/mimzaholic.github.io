@@ -9,17 +9,17 @@ function Item(name, priceUnit, bonus) {
     };
 }
 //Items available (objects) ***UPDATE PRICES HERE***
-    const veld = new Item("Veldspar", 3.82, "0%");
-    const conVeld = new Item("Concentrated Veldspar", 10.40, "5%");
-    const denseVeld = new Item("Dense Veldspar", 11.20, "10%");
+    const veld = new Item("Veldspar", 10.30, "0%");
+    const conVeld = new Item("Concentrated Veldspar", 11.07, "5%");
+    const denseVeld = new Item("Dense Veldspar", 11.70, "10%");
 
-    const scor = new Item("Scordite", 14.85, "0%");
-    const conScor = new Item("Condensed Scordite", 14.85, "5%");
-    const massScor = new Item("Massive Scordite", 14.85, "10%");
+    const scor = new Item("Scordite", 18.67, "0%");
+    const conScor = new Item("Condensed Scordite", 19.08, "5%");
+    const massScor = new Item("Massive Scordite", 19.35, "10%");
 
-    const prox = new Item("Pyroxeres", 47.32, "0%");
-    const solProx = new Item("Solid Pyroxeres", 47.32, "5%");
-    const visProx = new Item("Viscous Pyroxeres", 47.32, "10%");
+    const prox = new Item("Pyroxeres", 21.02, "0%");
+    const solProx = new Item("Solid Pyroxeres", 22.50, "5%");
+    const visProx = new Item("Viscous Pyroxeres", 26.96, "10%");
 
 //Display available Items
 function itemDisplay() {
