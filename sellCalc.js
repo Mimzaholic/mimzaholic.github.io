@@ -8,7 +8,7 @@ function Item(name, priceUnit, bonus) {
         return this.itemName + ": (" + this.itemPrice + " ISK)";
     };
 }
-//Items available (objects)
+//Items available (objects) ***UPDATE PRICES HERE***
     const veld = new Item("Veldspar", 3.82, "0%");
     const conVeld = new Item("Concentrated Veldspar", 10.40, "5%");
     const denseVeld = new Item("Dense Veldspar", 11.20, "10%");
@@ -24,7 +24,7 @@ function Item(name, priceUnit, bonus) {
 //Display available Items
 function itemDisplay() {
     document.getElementById("dispItems").innerHTML = 
-'<form><label for="veld1">' + veld.output() + '</label><br><input type="number" name="veld1" id="veld1" value="0"><br><label for="veld2">' + conVeld.output() + '</label><br><input type="number" name="veld2" id="veld2" value="0"><br><label for="veld3">' + denseVeld.output() + '</label><br><input type="number" name="veld3" id="veld3" value="0"><br><br><label for="scor1">' + scor.output() + '</label><br><input type="number" name="scor1" id="scor1" value="0"><br><label for="scor2">' + conScor.output() + '</label><br><input type="number" name="scor2" id="scor2" value="0"><br><label for="scor3">' + massScor.output() + '</label><br><input type="number" name="scor3" id="scor3" value="0"><br><br><label for="pyro1">' + prox.output() + '</label><br><input type="number" name="pyro1" id="pyro1" value="0"><br><label for="pyro2">' + solProx.output() + '</label><br><input type="number" name="pyro2" id="pyro2" value="0"><br><label for="pyro3">' + visProx.output() + '</label><br><input type="number" name="pyro3" id="pyro3" value="0"><br><br><button type="button" onclick="option2()">Calculate</button><button type="reset">Reset</button></form>'
+'<form><label for="veld1">' + veld.output() + '</label><br><input type="number" name="veld1" id="veld1" value="0" autofocus><br><label for="veld2">' + conVeld.output() + '</label><br><input type="number" name="veld2" id="veld2" value="0"><br><label for="veld3">' + denseVeld.output() + '</label><br><input type="number" name="veld3" id="veld3" value="0"><br><br><label for="scor1">' + scor.output() + '</label><br><input type="number" name="scor1" id="scor1" value="0"><br><label for="scor2">' + conScor.output() + '</label><br><input type="number" name="scor2" id="scor2" value="0"><br><label for="scor3">' + massScor.output() + '</label><br><input type="number" name="scor3" id="scor3" value="0"><br><br><label for="pyro1">' + prox.output() + '</label><br><input type="number" name="pyro1" id="pyro1" value="0"><br><label for="pyro2">' + solProx.output() + '</label><br><input type="number" name="pyro2" id="pyro2" value="0"><br><label for="pyro3">' + visProx.output() + '</label><br><input type="number" name="pyro3" id="pyro3" value="0"><br><br><button type="button" onclick="option2()">Calculate</button><button type="reset">Reset</button></form>'
 }
 
 //Calculator
@@ -42,8 +42,8 @@ function option2() {
     let visproxQty = parseInt(document.getElementById("pyro3").value);
     
     let veldTot = veldQty * veld.itemPrice;
-    let conveldTot = conveldQty * veld.itemPrice;
-    let denveldTot = denveldQty * veld.itemPrice;
+    let conveldTot = conveldQty * conVeld.itemPrice;
+    let denveldTot = denveldQty * denseVeld.itemPrice;
 
     let scorTot = scorQty * scor.itemPrice;
     let conscorTot = conscorQty * conScor.itemPrice;
@@ -55,17 +55,12 @@ function option2() {
 
     let grandTot = veldTot + conveldTot + denveldTot + scorTot + conscorTot + mascorTot + pyroTot + solpyroTot + vispyroTot;
     
-
-    alert(grandTot.toFixed(2) + " ISK")
+    document.getElementById("result").innerHTML = "<br><strong>Veldspar</strong><br>" + veld.itemName + ": (" + veldQty + ") units = " + veldTot.toFixed(2) + " ISK<br>" + conVeld.itemName + ": (" + conveldQty + ") units = " + conveldTot.toFixed(2) + " ISK<br>" + denseVeld.itemName + ": (" + denveldQty + ") units = " + denveldTot.toFixed(2) + " ISK<br><br><strong>Scordite</strong><br>" + scor.itemName + ": (" + scorQty + ") units = " + scorTot.toFixed(2) + " ISK<br>" + conScor.itemName + ": (" + conscorQty + ") units = " + conscorTot.toFixed(2) + " ISK<br>" + massScor.itemName + ": (" + mascorQty + ") units = " + mascorTot.toFixed(2) + " ISK<br><br><strong>Pyroxeres</strong><br>"  + prox.itemName + ": (" + proxQty + ") units = " + pyroTot.toFixed(2) + " ISK<br>" + solProx.itemName + ": (" + solproxQty + ") units = " + solpyroTot.toFixed(2) + " ISK<br>" + visProx.itemName + ": (" + visproxQty + ") units = " + vispyroTot.toFixed(2) + " ISK<br><strong>Contract Total: " + grandTot.toFixed(2) + " ISK<br>";
+    //alert(grandTot.toFixed(2) + " ISK")
 }
 
 /*
 Regular space: &nbsp;
 Two spaces gap: &ensp;
 Four spaces gap: &emsp;
-
-
-
-
-"<p>" + veld.output() + "<br>" + conVeld.output() + "<br>" + denseVeld.output() + "<br><br>" + scor.output() + "<br>" + conScor.output() + "<br>" + massScor.output() + "<br><br>" + prox.output() + "<br>" + solProx.output() + "<br>" + visProx.output(); + "</p>"
 */
