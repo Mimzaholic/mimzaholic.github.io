@@ -14,6 +14,7 @@
 <!--Load the CSS file here-->
   <link rel="stylesheet" href="style.css">
   <title>Miner's Inn</title>
+  <script src="parseSellCalc.js"></script>
 </head>
 <body  onload="itemDisplay()">
   <div class="header">
@@ -32,9 +33,14 @@
       <div class="card">
         <h2>Sell us your stuff...</h2>
         <div id="dispItems"></div>
-        <div class="buyForm"></div>
-
+        <div class="buyForm" id="buyForm"></div>
         <div class="result" id="result"></div>
+        <div id="parseSellCalc">
+          <form>
+            <textarea name="inp" id="inp" cols="30" rows="10"></textarea><br>
+            <button type="button" onclick="byElements()">Submit</button><button type="reset">Reset</button>        
+          </form>
+        </div>
       </div>
     </div>  
     <div class="rightcolumn">
