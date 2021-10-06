@@ -218,7 +218,7 @@ function iconCalc() {
         tally += parseInt(itemTot);
         console.log(itemTot + " " + tally);
     };        
-    document.getElementById("outputIcon").innerHTML = useroutput.toLocaleString("en-US", currency) + "<br><strong>" + tally.toLocaleString() + " ISK TOTAL</strong>";
+    document.getElementById("outputIcon").innerHTML = useroutput.toLocaleString("en-US", currency) + "<br><strong>Contract Total: " + tally.toLocaleString() + " ISK</strong>";
 
 };
 
