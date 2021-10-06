@@ -20,6 +20,11 @@ function Item(name, priceUnit, bonus) {
     var solProx = new Item("Solid Pyroxeres", 22.50, "5%");
     var visProx = new Item("Viscous Pyroxeres", 26.96, "10%");
 
+    var currency = {
+        style: "currency",
+        currency: "USD"
+    };
+
 //Display available Items
 function itemDisplay() {
     document.getElementById("dispItems").innerHTML = 
@@ -55,8 +60,8 @@ function option2() {
 
     let grandTot = veldTot + conveldTot + denveldTot + scorTot + conscorTot + mascorTot + pyroTot + solpyroTot + vispyroTot;
     
-    document.getElementById("result").innerHTML = "<br><strong>Veldspar</strong><br>" + veld.itemName + ": (" + veldQty + ") units = " + veldTot.toFixed(2) + " ISK<br>" + conVeld.itemName + ": (" + conveldQty + ") units = " + conveldTot.toFixed(2) + " ISK<br>" + denseVeld.itemName + ": (" + denveldQty + ") units = " + denveldTot.toFixed(2) + " ISK<br><br><strong>Scordite</strong><br>" + scor.itemName + ": (" + scorQty + ") units = " + scorTot.toFixed(2) + " ISK<br>" + conScor.itemName + ": (" + conscorQty + ") units = " + conscorTot.toFixed(2) + " ISK<br>" + massScor.itemName + ": (" + mascorQty + ") units = " + mascorTot.toFixed(2) + " ISK<br><br><strong>Pyroxeres</strong><br>"  + prox.itemName + ": (" + proxQty + ") units = " + pyroTot.toFixed(2) + " ISK<br>" + solProx.itemName + ": (" + solproxQty + ") units = " + solpyroTot.toFixed(2) + " ISK<br>" + visProx.itemName + ": (" + visproxQty + ") units = " + vispyroTot.toFixed(2) + " ISK<br><strong>Contract Total: " + grandTot.toFixed(2) + " ISK<br>";
-    //alert(grandTot.toFixed(2) + " ISK")
+    document.getElementById("result").innerHTML = "<br><strong>Veldspar</strong><br>" + veld.itemName + ": (" + veldQty + ") units = " + veldTot.toLocaleString("en-US", currency) + " ISK<br>" + conVeld.itemName + ": (" + conveldQty + ") units = " + conveldTot.toLocaleString("en-US", currency) + " ISK<br>" + denseVeld.itemName + ": (" + denveldQty + ") units = " + denveldTot.toLocaleString("en-US", currency) + " ISK<br><br><strong>Scordite</strong><br>" + scor.itemName + ": (" + scorQty + ") units = " + scorTot.toLocaleString("en-US", currency) + " ISK<br>" + conScor.itemName + ": (" + conscorQty + ") units = " + conscorTot.toLocaleString("en-US", currency) + " ISK<br>" + massScor.itemName + ": (" + mascorQty + ") units = " + mascorTot.toLocaleString("en-US", currency) + " ISK<br><br><strong>Pyroxeres</strong><br>"  + prox.itemName + ": (" + proxQty + ") units = " + pyroTot.toLocaleString("en-US", currency) + " ISK<br>" + solProx.itemName + ": (" + solproxQty + ") units = " + solpyroTot.toLocaleString("en-US", currency) + " ISK<br>" + visProx.itemName + ": (" + visproxQty + ") units = " + vispyroTot.toLocaleString("en-US", currency) + " ISK<br><strong>Contract Total: " + grandTot.toLocaleString("en-US", currency) + " ISK<br>";
+    //alert(grandTot + " ISK")
 };
 
 // THIS IS THE START OF OPT 1 (THE LOOT CALC)
@@ -76,56 +81,56 @@ function lootLogCalc() {
         switch (elements[2]) {
             case veld.itemName:
                 itemTot = parseInt(elements[3]) * veld.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case conVeld.itemName:
                 itemTot = parseInt(elements[3]) * conVeld.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case denseVeld.itemName:
                 itemTot = parseInt(elements[3]) * denseVeld.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case scor.itemName:
                 itemTot = parseInt(elements[3]) * scor.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case conScor.itemName:
                 itemTot = parseInt(elements[3]) * conScor.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case massScor.itemName:
                 itemTot = parseInt(elements[3]) * massScor.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case prox.itemName:
                 itemTot = parseInt(elements[3]) * prox.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case solProx.itemName:
                 itemTot = parseInt(elements[3]) * solProx.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case visProx.itemName:
                 itemTot = parseInt(elements[3]) * visProx.itemPrice;
-                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             default:
@@ -133,7 +138,7 @@ function lootLogCalc() {
         };
         useroutput.push(lnAnswer);
     };        
-    document.getElementById("outputLoot").innerHTML = useroutput;
+    document.getElementById("outputLoot").innerHTML = useroutput.toLocaleString("en-US", currency);
 
 };
 
@@ -154,56 +159,56 @@ function iconCalc() {
         switch (elements[0]) {
             case veld.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * veld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case conVeld.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * conVeld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case denseVeld.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * denseVeld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case scor.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * scor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case conScor.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * conScor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case massScor.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * massScor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case prox.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * prox.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             case solProx.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * solProx.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
         
             case visProx.itemName:
                 itemTot = parseFloat(elements[1].replace(/,/g, '')) * visProx.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
                 break;
     
             default:
@@ -213,7 +218,7 @@ function iconCalc() {
         tally += parseInt(itemTot);
         console.log(itemTot + " " + tally);
     };        
-    document.getElementById("outputIcon").innerHTML = useroutput + "<br><strong>" + tally.toFixed(2) + " ISK TOTAL</strong>";
+    document.getElementById("outputIcon").innerHTML = useroutput.toLocaleString("en-US", currency) + "<br><strong>" + tally.toLocaleString() + " ISK TOTAL</strong>";
 
 };
 
