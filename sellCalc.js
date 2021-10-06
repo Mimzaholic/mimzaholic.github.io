@@ -8,17 +8,17 @@ function Item(name, priceUnit, bonus) {
     };
 };
 //Items available (objects) ***UPDATE PRICES HERE***
-    const veld = new Item("Veldspar", 10.30, "0%");
-    const conVeld = new Item("Concentrated Veldspar", 11.07, "5%");
-    const denseVeld = new Item("Dense Veldspar", 11.70, "10%");
+    var veld = new Item("Veldspar", 10.30, "0%");
+    var conVeld = new Item("Concentrated Veldspar", 11.07, "5%");
+    var denseVeld = new Item("Dense Veldspar", 11.70, "10%");
 
-    const scor = new Item("Scordite", 18.67, "0%");
-    const conScor = new Item("Condensed Scordite", 19.08, "5%");
-    const massScor = new Item("Massive Scordite", 19.35, "10%");
+    var scor = new Item("Scordite", 18.67, "0%");
+    var conScor = new Item("Condensed Scordite", 19.08, "5%");
+    var massScor = new Item("Massive Scordite", 19.35, "10%");
 
-    const prox = new Item("Pyroxeres", 21.02, "0%");
-    const solProx = new Item("Solid Pyroxeres", 22.50, "5%");
-    const visProx = new Item("Viscous Pyroxeres", 26.96, "10%");
+    var prox = new Item("Pyroxeres", 21.02, "0%");
+    var solProx = new Item("Solid Pyroxeres", 22.50, "5%");
+    var visProx = new Item("Viscous Pyroxeres", 26.96, "10%");
 
 //Display available Items
 function itemDisplay() {
@@ -60,11 +60,11 @@ function option2() {
 };
 
 // THIS IS THE START OF OPT 1 (THE LOOT CALC)
-function byElements() {
+function lootLogCalc() {
     let itemTot;
     let useroutput = [];
     let lnAnswer;
-    let userInput = document.getElementById("inp").value;
+    let userInput = document.getElementById("inpLoot").value;
     let data = userInput.trim();
     let rows = data.split("\n");
 
@@ -76,56 +76,56 @@ function byElements() {
         switch (elements[2]) {
             case veld.itemName:
                 itemTot = parseInt(elements[3]) * veld.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
         
             case conVeld.itemName:
                 itemTot = parseInt(elements[3]) * conVeld.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
     
             case denseVeld.itemName:
                 itemTot = parseInt(elements[3]) * denseVeld.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
         
             case scor.itemName:
                 itemTot = parseInt(elements[3]) * scor.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
     
             case conScor.itemName:
                 itemTot = parseInt(elements[3]) * conScor.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
     
             case massScor.itemName:
                 itemTot = parseInt(elements[3]) * massScor.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
         
             case prox.itemName:
                 itemTot = parseInt(elements[3]) * prox.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
     
             case solProx.itemName:
                 itemTot = parseInt(elements[3]) * solProx.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
         
             case visProx.itemName:
                 itemTot = parseInt(elements[3]) * visProx.itemPrice;
-                console.log(elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
-                lnAnswer = elements[1] + " " + elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                console.log(elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[2] + " (" + elements[3] + ")units " + itemTot.toFixed(2) + " ISK<br>";
                 break;
     
             default:
@@ -133,7 +133,87 @@ function byElements() {
         };
         useroutput.push(lnAnswer);
     };        
-    document.getElementById("output").innerHTML = useroutput;
+    document.getElementById("outputLoot").innerHTML = useroutput;
+
+};
+
+function iconCalc() {
+    let itemTot;
+    let useroutput = [];
+    let lnAnswer;
+    let tally = 0;
+    let userInput = document.getElementById("inpIcon").value;
+    let data = userInput.trim();
+    let rows = data.split("\n");
+
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        //console.log(row);
+        let elements = row.split("\t");
+        //console.log(elements);
+        switch (elements[0]) {
+            case veld.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * veld.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+        
+            case conVeld.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * conVeld.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+    
+            case denseVeld.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * denseVeld.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+        
+            case scor.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * scor.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+    
+            case conScor.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * conScor.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+    
+            case massScor.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * massScor.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+        
+            case prox.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * prox.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");            
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+    
+            case solProx.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * solProx.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+        
+            case visProx.itemName:
+                itemTot = parseFloat(elements[1].replace(/,/g, '')) * visProx.itemPrice;
+                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK");        
+                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toFixed(2) + " ISK<br>";
+                break;
+    
+            default:
+                break;
+        };
+        useroutput.push(lnAnswer);
+        tally += parseInt(itemTot);
+        console.log(itemTot + " " + tally);
+    };        
+    document.getElementById("outputIcon").innerHTML = useroutput + "<br><strong>" + tally.toFixed(2) + " ISK TOTAL</strong>";
 
 };
 
