@@ -12,29 +12,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap" rel="stylesheet">
 <!--Load the CSS file here-->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style1.css">
   <title>Miner's Inn</title>
 </head>
 <body>
   <div class="header">
     <h1>Miner's Inn</h1>
-    <p><strong>The new official website.</strong></p>
   </div>
   <div class="topnav">
     <a href="index.html">Miner's Inn</a>
     <a href="buy.html">Buy </a>
     <a href="sell.html">Sell </a>
-    <a href="faq.html">FAQ </a>
-    <a href="login.html" style="float:right">Login</a>
+    <a href="faq.html" id="faq">FAQ </a>
+    <div class="copyright">
+      &#169; 2021 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
   </div>
-  <div class="row">
-    <div class="leftcolumn">
+  <div class="calculator">
 <!--Buy Form-->
-      <div class="card">
-        <div class="buyForm"></div>
           <h2>Buy things from us...</h2>
           <form action="buy.html" method="GET">
-            <label for="userSelector">Select User</label><br>
+            <label for="userSelector">Select User</label>
             <select name="userSelector" id="userSelector" autofocus>
               <option value="SELECT A USER">SELECT A USER</option>
               <option value="Ah Kacke">Ah Kacke</option>
@@ -132,16 +130,16 @@
               <option value="xKickerx">xKickerx</option>
               <option value="Yasez Chipri">Yasez Chipri</option>
               <option value="ZERSTEORER23">ZERSTEORER23</option>
-            </select><br>
-            <label for="trit">Tritanium (3.82 ISK/unit)</label><br>
-            <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0"><br>
-            <label for="py">Pyerite (14.85 ISK/unit)</label><br>
-            <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0"><br>
-            <label for="mex">Mexallon (47.32 ISK/unit)</label><br>
-            <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0"><br><br>
+            </select>
+            <label for="trit">Tritanium (3.82 ISK/unit)</label>
+            <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0">
+            <label for="py">Pyerite (14.85 ISK/unit)</label>
+            <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0">
+            <label for="mex">Mexallon (47.32 ISK/unit)</label>
+            <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
             <button type="button" onclick="priceCalc()">Calculate</button>
-            <input type="reset" onclick="reset()"><br><br>
-            <div id="output"><strong>SELECT A USER</strong><br>
+            <button type="reset" onclick="reset()">Reset</button>
+            <div id="output"><strong>SELECT A USER</strong>
               Tritanium: (0) units 0.00 ISK <br>
               Pyerite: (0) units 0.00 ISK <br>
               Mexallon: (0) units 0.00 ISK <br>
@@ -190,39 +188,8 @@
             }
 
           </script>
-          
-      </div>
-    </div>
-<!--Right Column-->  
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>About Us</h2>
-        <div class="logo"><img src="logo.jpg"></div>
-        <p>Do you enjoy mining, trade, research, and PvE, but with no activity commitments? Then we are the right corp for you.
-        <strong>"<u>Real life first</u>"</strong> is our motto. We have no activity quota's or any other mandatory operations going on.</p> 
-        <h4>What do we have to offer? <br> We focus primarily on industry and mining:</h4>
-        <ul><li>Mining (with orca support)</li>
-            <li>T2 Refining (0.5% tax)</li>
-            <li>Production (2.5% tax)</li>
-            <li>Fair purchase of ores in Nafrivik and the surrounding area</li>
-           <li>0.1 % Tax and a lot of FREEDOM under the leash of POO.</li>
-            <li>Very active player base, all time zones covered</li>
-            <li>You need help? We are more than willing to assist</li>
-            <li>Newbie friendly</li></ul>
-        <h4>Requirements:</h4>
-        <ul><li>No drama</li></ul>
-      </div>
-      <div class="card">
-        <h3>Follow us on <a href="https://discord.gg/mXpyECD5">Discord</a> </h3>
-        <h3></h3>
-      </div>
-    </div>
   </div>
-  <div class="footer">
-    <p>&#169; Russell Mizer <br>
-    <ul><li>Discord: Mimzaholic#4357</li>
-      <li><div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></li>
-    </ul></p>
-  </div>
+  <div class="spacer"> </div>
+
 </body>
 </html>
