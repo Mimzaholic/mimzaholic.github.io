@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Eve Online Corp Website">
-  <meta name="keywords" content="Eve, Eve Online, Corp, Corporation">
-  <meta name="author" content="Russell Mizer">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="img/png" href="pickaxe.png">
-<!--Load fonts here -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap" rel="stylesheet">
-<!--Load the CSS file here-->
-  <link rel="stylesheet" href="style1.css">
-  <title>Miner's Inn</title>
-  <script src="sellCalc.js"></script>
-</head>
-<body  onload="itemDisplay()">
-  <div class="header">
-    <h1>Miner's Inn</h1>
-    <p><strong>The new official website.</strong></p>
-  </div>
-  <div class="topnav">
-    <a href="index.html">Miner's Inn</a>
-    <a href="buy.html">Buy </a>
-    <a href="sell.html">Sell </a>
-    <a href="faq.html" id="faq">FAQ </a>
-    <div class="copyright">
-      &#169; 2021 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>Sell us your stuff...</h2>
-        <div id="dispItems"></div>
-        <div class="buyForm" id="buyForm"></div>
-        <div class="result" id="result"></div>
-        <div id="lootLogCalc"><h3>Loot Log Calc - WARNING: ALPHA TESTING!</h3>
-          <form>
-            <textarea name="inpLoot" id="inpLoot" cols="30" rows="10" disabled></textarea><br>
-            <button type="button" onclick="lootLogCalc()">Submit</button><button type="reset">Reset</button>        
-          </form>
-        </div>
-        <div id="outputLoot"></div>
-        <div id="iconCalc"><h3>Icon View Calc - WARNING: BETA TESTING!</h3>
-          <form>
-            <textarea name="inpIcon" id="inpIcon" cols="30" rows="10"></textarea><br>
-            <button type="button" onclick="iconCalc()">Submit</button><button type="reset">Reset</button>        
-          </form>
-        </div>
-        <div id="outputIcon"></div>
-      </div>
-    </div>  
-
-  </div>
-
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Eve Online Corp Website" />
+		<meta name="keywords" content="Eve, Eve Online, Corp, Corporation" />
+		<meta name="author" content="Russell Mizer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="img/png" href="pickaxe.png" />
+		<!--Load fonts here -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap"
+			rel="stylesheet"
+		/>
+		<!--Load the CSS file here-->
+		<link rel="stylesheet" href="style1.css" />
+		<title>Miner's Inn</title>
+		<script src="sellCalc.js"></script>
+	</head>
+	<body onload="itemDisplay()">
+		<div class="header">
+			<h1>Miner's Inn</h1>
+		</div>
+		<div class="topnav">
+			<a href="index.html">Miner's Inn</a>
+			<a href="buy.html">Buy </a>
+			<a href="sell.html">Sell </a>
+			<a href="faq.html" id="faq">FAQ </a>
+			<div class="copyright">
+				&#169; 2021 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by
+				<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons"
+					>Smashicons</a
+				>
+				from
+				<a href="https://www.flaticon.com/" title="Flaticon"
+					>www.flaticon.com</a
+				>
+			</div>
+		</div>
+		<div class="card" style="display: none">
+			<h2>Sell us your stuff...</h2>
+			<div id="dispItems"></div>
+			<div class="buyForm" id="buyForm"></div>
+			<div class="result" id="result"></div>
+		</div>
+		<div class="card">
+			<div id="iconCalc">
+				<h3>Icon View Calc - WARNING: BETA TESTING!</h3>
+				<form>
+					<textarea name="inpIcon" id="inpIcon" cols="50" rows="10" placeholder="Use ICON view only" autofocus></textarea
+					><br />
+					<button type="button" onclick="iconCalc()">Submit</button
+					><button class="reset" type="reset" onclick="reset()">
+						Reset
+					</button>
+				</form>
+			</div>
+			<div id="outputIcon"></div>
+			<div id="lootLogCalc" style="display: none">
+				<h3>Loot Log Calc - WARNING: ALPHA TESTING!</h3>
+				<form>
+					<textarea
+						name="inpLoot"
+						id="inpLoot"
+						cols="30"
+						rows="10"
+						disabled
+					></textarea
+					><br />
+					<button type="button" onclick="lootLogCalc()" disabled>Submit</button
+					><button type="reset" disabled>Reset</button>
+				</form>
+			</div>
+			<div id="outputLoot"></div>
+		</div>
+	</body>
 </html>

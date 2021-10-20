@@ -65,7 +65,7 @@ body {
     font-size: .7em;
 }
 
-.calculator {
+.card {
     grid-column: 4/8;
     grid-row: 2;
     background-color: rgba(0, 0, 0, 0.3);
@@ -91,12 +91,16 @@ input, select, textarea {
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-form {
+.buy {
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
 }
 
 .spacer {
     grid-row: 3;
+}
+
+.reset:hover {
+    background-color: rgba(255, 0, 0, 0.65)
 }

@@ -28,10 +28,10 @@
       &#169; 2021 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
   </div>
-  <div class="calculator">
+  <div class="card">
 <!--Buy Form-->
           <h2>Buy things from us...</h2>
-          <form action="buy.html" method="GET">
+          <form action="buy.html" method="GET" class="buy">
             <label for="userSelector">Select User</label>
             <select name="userSelector" id="userSelector" autofocus>
               <option value="SELECT A USER">SELECT A USER</option>
@@ -138,13 +138,13 @@
             <label for="mex">Mexallon (47.32 ISK/unit)</label>
             <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
             <button type="button" onclick="priceCalc()">Calculate</button>
-            <button type="reset" onclick="reset()">Reset</button>
-            <div id="output"><strong>SELECT A USER</strong>
+            <button type="reset" class="reset" onclick="reset()">Reset</button>
+            <div id="output"><strong>SELECT A USER</strong><br>
               Tritanium: (0) units 0.00 ISK <br>
               Pyerite: (0) units 0.00 ISK <br>
               Mexallon: (0) units 0.00 ISK <br>
-              <strong>Grand Total: 0.00 ISK</strong></div><br>
-            <textarea name="cpy" id="cpy" cols="30" rows="4"></textarea><br>
+              <strong>Grand Total: 0.00 ISK</strong></div>
+            <textarea name="cpy" id="cpy" cols="30" rows="4"></textarea>
             <button type="button" onclick="copyData()">Copy</button>  
           </form>
           <script>
