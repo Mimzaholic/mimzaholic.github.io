@@ -41,13 +41,25 @@ body {
 	vertical-align: middle;
 }
 
-.header {
+.intNav a:hover {
+	color: white;
+}
+
+.title {
 	width: 80%;
 	margin-top: 2.5em;
 	margin-bottom: 2.5em;
 	margin-inline: auto;
 	text-align: center;
 	font-size: 5vw;
+}
+
+.header {
+	width: 80%;
+	margin-bottom: .5em;
+	margin-inline: auto;
+	text-align: center;
+	font-size: 2vw;
 }
 
 .calc {
@@ -82,17 +94,21 @@ input, select, textarea {
 	text-align: center;
 }
 
+.calc {
+	
+}
+
+.calc h2 {
+	text-align: center;
+	margin: .3em;
+}
+
 .buy {
 	width: 90%;
 	margin-inline: auto;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-}
-
-.calc h2 {
-	text-align: center;
-	margin: .3em;
 }
 
 .spacer {
@@ -103,33 +119,41 @@ input, select, textarea {
     background-color: rgba(255, 0, 0, 0.65)
 }
 
-.card {
+.mainContent {
 	width: 80%;
 	margin-inline: auto;
-	padding: 20px;
-	margin-top: 20px;
-	box-shadow: 1px 1px 3px black;
 }
 
-.cardImg img {
-	width: 100%;
-	height: auto;
+.mainGrid {
+	width: 80%;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: 1em;
+}
+
+.card {
+	padding: 1em;
+	margin-bottom: 1em;
+	box-shadow: 1px 1px 3px black;
+	text-shadow: 1px 1px 3px black;
+}
+
+.bio {
+	display: flex;
+	padding: 1em;
+	margin-bottom: 1em;
+	box-shadow: 1px 1px 3px black;
+	text-shadow: 1px 1px 3px black;
 }
 
 .manphoto img {
-	margin-top: 50px;
 	max-height: 300px;
-}
-
-.manbio h3 {
-	margin: 0;
-	font-style: small-caps;
+	margin-right: 1em;
 }
 
 .manbio h4 {
-	margin: 0;
-	font-style: small-caps;
-	color: #324a5f;
+	color: rgb(80, 101, 119);
 }
 
 footer {
