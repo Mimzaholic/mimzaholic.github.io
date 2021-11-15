@@ -4,6 +4,7 @@
 	padding: 0;
 	margin: 0;
 	color: rgba(255, 255, 255, 0.65);
+	text-shadow: 1px 1px 3px black;
 }
 
 body {
@@ -136,7 +137,7 @@ input, select, textarea {
 	padding: 1em;
 	margin-bottom: 1em;
 	box-shadow: 1px 1px 3px black;
-	text-shadow: 1px 1px 3px black;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .bio {
@@ -153,7 +154,8 @@ input, select, textarea {
 }
 
 .manbio h4 {
-	color: rgb(80, 101, 119);
+	color: rgb(0, 0, 0);
+	text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.3)
 }
 
 footer {
@@ -161,4 +163,19 @@ footer {
 	left: 0;
 	bottom: 0;
 	width: 100%;
+}
+
+ul {
+	padding: 1em;
+}
+
+#aboutUs h2 {
+	text-align: center;
+	margin-bottom: .5em;
+	font-size: 2em;
+}
+
+#aboutUs img {
+	width: 100%;
+	margin-inline: auto;
 }
