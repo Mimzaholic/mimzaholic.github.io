@@ -7,6 +7,10 @@
 	text-shadow: 1px 1px 3px black;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	background-image: url("moon.png");
 	background-repeat: no-repeat;
@@ -63,17 +67,11 @@ body {
 	font-size: 2vw;
 }
 
-.calc {
-	width: 300px;
-	margin-inline: auto;
-	background-color: rgba(0, 0, 0, 0.0);
-	box-shadow: 0px 0px 3px black;
-}
-
 button {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 5px;
     width: 125px;
+	margin-bottom: 1em;
 }
 
 button:hover {
@@ -81,7 +79,7 @@ button:hover {
     color: rgba(51, 51, 51, 0.3);
     box-shadow: 1px 1px 5px grey;
     transition-property: background-color;
-    transition-duration: 2s;
+    transition-duration: 1s;
     transition-timing-function: ease-in-out;
 }
 
@@ -96,7 +94,20 @@ input, select, textarea {
 }
 
 .calc {
-	
+	width: 350px;
+	margin-inline: auto;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 3px black;
+}
+
+#sellCalc {	
+	height: 75vh;
+}
+
+#iconCalc {
+	height: 85%;
+	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .calc h2 {
@@ -179,3 +190,30 @@ ul {
 	width: 100%;
 	margin-inline: auto;
 }
+
+/* width */
+::-webkit-scrollbar {
+	width: 15px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: rgb(0, 0, 0);
+  }
+
+/* width */
+#iconCalc::-webkit-scrollbar {
+	width: 15px;
+  }
+  
+  /* Track */
+  #iconCalc::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+  }
+  
+  /* Handle */
+  #iconCalc::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+  }

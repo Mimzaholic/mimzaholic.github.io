@@ -14,7 +14,6 @@
 			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap"
 			rel="stylesheet"
 		/>
-		<!--Load the CSS file here-->
 		<link rel="stylesheet" href="style2.css" />
 		<title>Miner's Inn</title>
 		<script src="sellCalc.js"></script>
@@ -35,20 +34,26 @@
 		</div>
 		<div class="calc" style="display: none">
 			<h2>Sell us your stuff...</h2>
+			<!--
 			<div id="dispItems"></div>
+
+			-->
 			<div class="buyForm" id="buyForm"></div>
 			<div class="result" id="result"></div>
 		</div>
-		<div class="calc">
+		<div class="calc" id="sellCalc">
+				<h2>Price Table</h2>
 			<div id="iconCalc">
-				<h3>Icon View Calc - WARNING: BETA TESTING!</h3>
+				<div id="dispItems"></div><br>
+				<h3>Icon View Calc</h3>
+				<script src=""></script>
 				<form>
 					<textarea
 						name="inpIcon"
 						id="inpIcon"
 						cols="50"
 						rows="10"
-						placeholder="Use ICON view only"
+						placeholder="IMPORTANT!!! Use ICON view only"
 						autofocus
 					></textarea
 					><br />

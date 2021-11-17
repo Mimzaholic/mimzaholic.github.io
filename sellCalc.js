@@ -1,24 +1,44 @@
 //Object constructor for the items that User will sell to Corp
-function Item(name, priceUnit, bonus) {
+function Item(name, priceUnit) {
     this.itemName = name;
     this.itemPrice = priceUnit;
-    this.itemBonus = bonus
     this.output = function() {
-        return this.itemName + ": (" + this.itemPrice + " ISK)";
+        return this.itemName + ": (" + this.itemPrice.toLocaleString("en-US") + " ISK / unit)";
     };
 };
 //Items available (objects) ***UPDATE PRICES HERE***
-    var veld = new Item("Veldspar", 10.62, "0%");
-    var conVeld = new Item("Concentrated Veldspar", 10.80, "5%");
-    var denseVeld = new Item("Dense Veldspar", 12.51, "10%");
+    //Standard Ores
+    var veld = new Item("Veldspar", 10.11);
+    var conVeld = new Item("Concentrated Veldspar", 10.91);
+    var denseVeld = new Item("Dense Veldspar", 10.63);
 
-    var scor = new Item("Scordite", 18.45, "0%");
-    var conScor = new Item("Condensed Scordite", 18.9, "5%");
-    var massScor = new Item("Massive Scordite", 18.45, "10%");
+    var scor = new Item("Scordite", 17.97);
+    var conScor = new Item("Condensed Scordite", 18.87);
+    var massScor = new Item("Massive Scordite", 18.44);
 
-    var prox = new Item("Pyroxeres", 24.84, "0%");
-    var solProx = new Item("Solid Pyroxeres", 26.08, "5%");
-    var visProx = new Item("Viscous Pyroxeres", 27.39, "10%");
+    var prox = new Item("Pyroxeres", 24.30);
+    var solProx = new Item("Solid Pyroxeres", 27.28);
+    var visProx = new Item("Viscous Pyroxeres", 26.82);
+
+    //Moon Ores
+    var bit = new Item("Bitumens", 1189.15);
+    var brimBit = new Item("Brimful Bitumens", 1367.52);
+    var gliBit = new Item("Glistening Bitumens", 2378.30);
+
+    var coe = new Item("Coesite", 1264.80);
+    var brimCoe = new Item("Brimful Coesite", 1454.52);
+    var gliCoe = new Item("Glistening Coesite", 2529.60);
+
+    var syl = new Item("Sylvite", 1145.38);
+    var brimSyl = new Item("Brimful Sylvite", 1317.19);
+    var gliSyl = new Item("Glistening Sylvite", 2290.76);
+
+    var zeo = new Item("Zeolites", 1190.00);
+    var brimZeo = new Item("Brimful Zeolites", 1368.50);
+    var gliZeo = new Item("Glistening Zeolites", 2380.00);
+    //Ice
+    var ice = new Item("Clear Icicle", 186150.00);
+
 
     var currency = {
         style: "currency",
@@ -27,8 +47,18 @@ function Item(name, priceUnit, bonus) {
 
 //Display available Items
 function itemDisplay() {
-    document.getElementById("dispItems").innerHTML = 
-'<form><label for="veld1">' + veld.output() + '</label><br><input type="number" name="veld1" id="veld1" value="0" autofocus><br><label for="veld2">' + conVeld.output() + '</label><br><input type="number" name="veld2" id="veld2" value="0"><br><label for="veld3">' + denseVeld.output() + '</label><br><input type="number" name="veld3" id="veld3" value="0"><br><br><label for="scor1">' + scor.output() + '</label><br><input type="number" name="scor1" id="scor1" value="0"><br><label for="scor2">' + conScor.output() + '</label><br><input type="number" name="scor2" id="scor2" value="0"><br><label for="scor3">' + massScor.output() + '</label><br><input type="number" name="scor3" id="scor3" value="0"><br><br><label for="pyro1">' + prox.output() + '</label><br><input type="number" name="pyro1" id="pyro1" value="0"><br><label for="pyro2">' + solProx.output() + '</label><br><input type="number" name="pyro2" id="pyro2" value="0"><br><label for="pyro3">' + visProx.output() + '</label><br><input type="number" name="pyro3" id="pyro3" value="0"><br><br><button type="button" onclick="option2()">Calculate</button><button type="reset">Reset</button></form>'
+    const StandardOres = [veld, conVeld, denseVeld, scor, conScor, massScor, prox, solProx, visProx];
+    const MoonOres = [bit, brimBit, gliBit, coe, brimCoe, gliCoe, syl, brimSyl, gliSyl, zeo, brimZeo,gliZeo];
+    let stnd = "";
+    let moon = "";
+    for (let i = 0; i < StandardOres.length; i++) {
+        stnd += StandardOres[i].output() + "<br>";        
+    }
+    for (let i = 0; i < MoonOres.length; i++) {
+        moon += MoonOres[i].output() + "<br>";        
+    }
+    document.getElementById("dispItems").innerHTML = '<h3>Standard Ores</h3>' + stnd + '<br><h3>Moon Ores</h3>' + moon + '<br><h3>Ice</h3>' + ice.output();
+
 };
 
 //option 2 - allow the user to type in the quantity of each item they have and the calculator would return a simple total in some detailed format.
