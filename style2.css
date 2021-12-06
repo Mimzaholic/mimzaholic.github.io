@@ -3,7 +3,7 @@
 	font-family: "Barlow Condensed", sans-serif;
 	padding: 0;
 	margin: 0;
-	color: rgba(255, 255, 255, 0.65);
+	color: rgba(255, 188, 111, 0.65);
 	text-shadow: 1px 1px 3px black;
 }
 
@@ -19,11 +19,34 @@ body {
 }
 
 .wrapper {
-	
+	width: 80%;
+	margin-inline: auto;
+}
+
+.scroller {	
 	max-height: 600px;
 	overflow: hidden;
 	overflow-y: scroll;
-	
+}
+
+#sellFlex {
+	display: flex;
+}
+
+
+#dispItems {
+	margin: .5em;
+	overflow: hidden;
+	overflow-y: scroll;
+	text-align: center;
+}
+
+#iconCalc {
+	margin: .5em;
+}
+
+#outputLoot {
+	background-color: black;
 }
 
 .topnav {
@@ -59,7 +82,6 @@ body {
 }
 
 .title {
-	width: 80%;
 	margin-top: 2.5em;
 	margin-bottom: 2.5em;
 	margin-inline: auto;
@@ -68,7 +90,6 @@ body {
 }
 
 .header {
-	width: 80%;
 	margin-bottom: .5em;
 	margin-inline: auto;
 	text-align: center;
@@ -95,27 +116,11 @@ input, select, textarea {
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-#iconCalc {
-	width: 90%;
-	margin: auto;
-	text-align: center;
-}
-
 .calc {
 	width: 350px;
 	margin-inline: auto;
 	background-color: rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 0px 3px black;
-}
-
-#sellCalc {	
-	height: 75vh;
-}
-
-#iconCalc {
-	height: 85%;
-	overflow: hidden;
-	overflow-y: scroll;
 }
 
 .calc h2 {
@@ -140,12 +145,10 @@ input, select, textarea {
 }
 
 .mainContent {
-	width: 80%;
 	margin-inline: auto;
 }
 
 .mainGrid {
-	width: 80%;
 	margin-inline: auto;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
@@ -153,6 +156,7 @@ input, select, textarea {
 }
 
 .card {
+	background-color: black;
 	padding: 1em;
 	margin-bottom: 1em;
 	box-shadow: 1px 1px 3px black;
