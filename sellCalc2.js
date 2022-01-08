@@ -1,11 +1,9 @@
-var currency = {
-        style: "currency",
-        currency: "USD"
-};
+var dateUpdated = "21 December 2021"
 
 function priceLookup(oName) {
 
     var oreLookup = {
+        //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!
         "Veldspar" : 10.11,
         "Concentrated Veldspar" : 10.91,
         "Dense Veldspar": 10.63,
@@ -40,52 +38,24 @@ function priceLookup(oName) {
     return oreLookup[oName]
 }
 
+var currency = {
+    style: "currency",
+    currency: "USD"
+};
+
 
 //Display available Items
 function itemDisplay() {
     document.getElementById("dispItems").innerHTML = priceLookup('Veldspar');
     /*
-    for (let i = 0; i < oreLookup().length; i++) {
-        stnd += oreLookup(i) + "<br>";        
+    for (let i = 0; i < oreLookup.length; i++) {
+        stnd += priceLookup(i) + "<br>";        
     
     document.getElementById("dispItems").innerHTML = '<h3>Standard Ores</h3>' + stnd;
 */
 };
 
-// THIS IS THE START OF OPT 1 (THE LOOT CALC)
-function lootLogCalc() {
-    var char = {
-        "Character" : 0,
-    };
-    let userInput = document.getElementById("inpLoot").value;
-    let charlist = []
-    let data = userInput.trim();
-    let rows = data.split("\n");
-
-    for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        //console.log(row);
-        let elements = row.split("\t");
-        //console.log(elements);
-        if (charlist.includes(elements[1])) {
-            console.log(char[elements[1]] + ": Already in List.");
-            char[elements[1]] = char[elements[1]] + (priceLookup(elements[2]) * elements[3]);
-        } else {
-            charlist.push(elements[1]);
-            console.log(elements[1] + ": Added.");
-            char[elements[1]] = priceLookup(elements[2]) * elements[3];
-        };
-//add prices
-        //char[elements[1]] = priceLookup(elements[2]) * elements[3];
-        console.log(char)
-        //useroutput.push(update.toLocaleString("en-US", currency));
-
-    };        
-    document.getElementById("outputLoot").innerHTML = char;
-    console.log(char);
-
-};
-
+//Calculator
 function iconCalc() {
     let itemTot;
     let useroutput = [];
@@ -97,67 +67,10 @@ function iconCalc() {
 
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        //console.log(row);
+        console.log(row);
         let elements = row.split("\t");
-        //console.log(elements);
-        switch (elements[0]) {
-            case veld.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * veld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
+        console.log(elements);
         
-            case conVeld.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * conVeld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-    
-            case denseVeld.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * denseVeld.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-        
-            case scor.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * scor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-    
-            case conScor.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * conScor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-    
-            case massScor.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * massScor.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-        
-            case pyro.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * pyro.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");            
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-    
-            case solpyro.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * solpyro.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-        
-            case vispyro.itemName:
-                itemTot = parseFloat(elements[1].replace(/,/g, '')) * vispyro.itemPrice;
-                console.log(elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK");        
-                lnAnswer = elements[0] + " (" + elements[1] + ")units " + itemTot.toLocaleString("en-US", currency) + " ISK<br>";
-                break;
-    
-            default:
-                break;
-        };
         useroutput.push(lnAnswer);
         tally += parseInt(itemTot);
         console.log(itemTot + " " + tally);
