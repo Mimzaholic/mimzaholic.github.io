@@ -2,9 +2,9 @@ var dateUpdated = "21 December 2021"
 
 function priceLookup(oName) {
 
-    var oreLookup = {
+    const OreLookup = {
         //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!
-        "Veldspar" : 10.11,
+        "Veldspar": 10.11,
         "Concentrated Veldspar" : 10.91,
         "Dense Veldspar": 10.63,
 
@@ -61,7 +61,7 @@ function iconCalc() {
     let useroutput = [];
     let lnAnswer;
     let tally = 0;
-    let userInput = document.getElementById("inpIcon").value;
+    let userInput = document.getElementById("iconvw").value;
     let data = userInput.trim();
     let rows = data.split("\n");
 
