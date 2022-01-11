@@ -31,15 +31,33 @@ const priceList = {
     //Ice
     "Clear Icicle": 186150.00
 };
+
+var currency = {
+    style: "currency",
+    currency: "USD"
+};
+
 let headerRow = ["Item", "Price"];
 let userArray = [];
 for (const key in priceList) {
-    //console.log(key, priceList[key]);
-    let userline = key + " " + priceList[key] + " ISK";
+    let userline = "<tr><td>" +  key + "</td><td>" + priceList[key].toLocaleString("en-US", currency) + " ISK</td>";
     userArray.push(userline);
-}
-console.log(userArray);
-let text = userArray.join("<br>")
+};
+let text = userArray.join("</tr>")
 
 
-document.querySelector(".list").innerHTML = "<h4 style='text-align: center'>Updated on: " + changeDate + "</h4><br>" + headerRow[0] + " " + headerRow[1] + "<br>" + text;
+document.querySelector(".list").innerHTML = "<h4 style='text-align: center'>Updated on: " + changeDate + "</h4><br><table id='priceTable'><tr><th>" + headerRow[0] + "</th><th> " + headerRow[1] + "</th></tr>" + text + "</table>";
+
+function icon() {
+    let userInput = document.getElementById("inpBox").value;
+    let data = userInput.trim();
+    let rows = data.split("\n");
+
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        console.log(row);
+        let elements = row.split("\t");
+        console.log(elements);
+        
+    }
+};

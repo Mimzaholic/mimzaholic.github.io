@@ -97,6 +97,11 @@ button {
   padding: 1em;
 }
 
+#priceTable table, tr, td{
+	padding-inline: 5px;
+	border: 1px grey inset;
+}
+
 footer {
 	position: fixed;
 	left: 0;
