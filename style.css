@@ -70,7 +70,7 @@ body {
 }
 
 .calculator {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 1);
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -87,8 +87,20 @@ body {
 }
 
 button {
-  padding-inline: 1em;
+  padding: .5em 1.5em;
   background-color: black;
+}
+
+button:hover {
+	background-color: green;
+	transition: ease-in-out;
+	transition-duration: 1s;
+}
+
+.reset:hover {
+	background-color: rgba(255, 0, 0, 0.5);
+	transition: ease-in-out;
+	transition-duration: 1s;
 }
 
 #iconvw {
@@ -100,6 +112,15 @@ button {
 #priceTable table, tr, td{
 	padding-inline: 5px;
 	border: 1px grey inset;
+}
+
+#inpBox {
+	margin: 1em 0 0 0;
+	background-color: black;
+}
+
+#sellOut {
+	margin: 1em 0;
 }
 
 footer {
