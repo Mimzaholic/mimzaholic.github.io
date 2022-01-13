@@ -81,14 +81,36 @@ body {
   text-align: center;
 }
 
+.list table{
+	margin-inline: auto;
+}
+
+.inputs {
+	padding: .5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	place-items: center;
+	gap: .5em;
+}
+
+input {
+	background-color: black;
+	width: 70px;
+}
+
+textarea {
+	background-color: black;
+}
+
 .buttonbox {
   display: flex;
   justify-content: center;
 }
 
 button {
-  padding: .5em 1.5em;
   background-color: black;
+  width: 70px;
 }
 
 button:hover {
@@ -112,11 +134,6 @@ button:hover {
 #priceTable table, tr, td{
 	padding-inline: 5px;
 	border: 1px grey inset;
-}
-
-#inpBox {
-	margin: 1em 0 0 0;
-	background-color: black;
 }
 
 #sellOut {

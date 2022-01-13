@@ -1,0 +1,24 @@
+
+<div class="calculator">
+<!--Buy Form-->
+          <h2>Buy things from us...</h2>
+          <form action="buy.html" method="GET" class="buy">
+            <div id="update"></div>
+            <label for="trit">Tritanium (3.82 ISK/unit)</label>
+            <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0">
+            <label for="py">Pyerite (14.85 ISK/unit)</label>
+            <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0">
+            <label for="mex">Mexallon (47.32 ISK/unit)</label>
+            <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
+            <button type="button" onclick="priceCalc()">Calculate</button>
+            <button type="reset" class="reset" onclick="reset()">Reset</button>
+            <div id="output">
+              Tritanium: (0) units 0.00 ISK
+              Pyerite: (0) units 0.00 ISK
+              Mexallon: (0) units 0.00 ISK
+              <strong>Grand Total: 0.00 ISK</strong></div>
+            <textarea name="cpy" id="cpy" cols="30" rows="4"></textarea><br>
+            <button type="button" onclick="copyData()">Copy</button>  
+          </form>
+          <script src="buyCalc.js"></script>
+  </div>

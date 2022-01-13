@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Eve Online Corp Website">
-  <meta name="keywords" content="Eve, Eve Online, Corp, Corporation">
-  <meta name="author" content="Russell Mizer">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="img/png" href="pickaxe.png">
-<!--Load fonts here -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap" rel="stylesheet">
-<!--Load the CSS file here-->
-  <link rel="stylesheet" href="style2.css">
-  <title>Miner's Inn</title>
-</head>
-<div class="topnav">
-  <div class="logo">
-    <a href="index.html">Miner's Inn</a>
-  </div>
-  <div class="intNav">
-    <a href="index.html">Home</a>
-    <a href="events.html">Events</a>
-    <a href="buy.html">Buy </a>
-    <a href="sell.html">Sell </a>
-    <a href="faq.html">FAQ </a>
-    <a href="about.html">About POO </a>
-  </div>
-</div>
-  <div class="calc">
-<!--Buy Form-->
-          <h2>Buy things from us...</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Eve Online Corp Website" />
+		<meta name="keywords" content="Eve, Eve Online, Corp, Corporation" />
+		<meta name="author" content="Russell Mizer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="img/png" href="pickaxe.png" />
+		<!--Load fonts here -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap"
+			rel="stylesheet"
+		/>
+		<!--Load the CSS file here-->
+		<link rel="stylesheet" href="style.css" />
+		<title>Miner's Inn</title>
+	</head>
+	<body>
+		<div class="topnav">
+			<div class="logo">
+				<a href="index.html">Miner's Inn</a>
+			</div>
+			<div class="intNav">
+				<a href="index.html">Home</a>
+				<a href="events.html">Events</a>
+				<a href="buy.html">Buy </a>
+				<a href="sell.html">Sell </a>
+				<a href="faq.html">FAQ </a>
+				<a href="about.html">About POO </a>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="calculator">
+				<h1>Buy things from us...</h1>
           <form action="buy.html" method="GET" class="buy">
-            
-            <label for="trit">Tritanium (3.82 ISK/unit)</label>
-            <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0">
-            <label for="py">Pyerite (14.85 ISK/unit)</label>
-            <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0">
-            <label for="mex">Mexallon (47.32 ISK/unit)</label>
-            <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
-            <button type="button" onclick="priceCalc()">Calculate</button>
-            <button type="reset" class="reset" onclick="reset()">Reset</button>
+            <div class="list"></div>
+            <div class="inputs">
+              Tritanium
+              <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0">
+              Pyerite
+              <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0">
+              Mexallon
+              <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
+              <button type="button" onclick="priceCalc()">Calculate</button>
+              <button type="reset" class="reset">Reset</button></form>
+            </div>
             <div id="output">
-              Tritanium: (0) units 0.00 ISK
-              Pyerite: (0) units 0.00 ISK
-              Mexallon: (0) units 0.00 ISK
-              <strong>Grand Total: 0.00 ISK</strong></div>
-            <textarea name="cpy" id="cpy" cols="30" rows="4"></textarea><br>
-            <button type="button" onclick="copyData()">Copy</button>  
-          </form>
-          <script src="buyCalc.js"></script>
-  </div>
-  <footer>
-    <div class="copyright">
-      &#169; 2021 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
-  </footer>
-</body>
+              Tritanium: (0) units 0.00 ISK <br>
+              Pyerite: (0) units 0.00 ISK <br>
+              Mexallon: (0) units 0.00 ISK <br>
+              <strong>Grand Total: 0.00 ISK</strong></div><br>
+            <textarea name="cpy" id="cpy" cols="30" rows="4" disabled></textarea><br>
+            <button type="button" onclick="copyData()" disabled>Copy</button>  
+			</div>
+		</div>
+		<footer>
+			<div class="copyright">
+				&#169; 2022 Russell Mizer | Discord: Mimzaholic#4357 | Icons made by
+				<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons"
+					>Smashicons</a
+				>
+				from
+				<a href="https://www.flaticon.com/" title="Flaticon"
+					>www.flaticon.com</a
+				>
+			</div>
+		</footer>
+		<script src="buyCalc.js"></script>
+	</body>
 </html>
