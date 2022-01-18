@@ -1,4 +1,4 @@
-const changeDate = "1/9/2022";
+const changeDate = "1/18/2022";
 const priceList = {
   //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!!!!
   "Tritanium" :	4.17	,
@@ -14,29 +14,30 @@ var currency = {
   style: "currency",
   currency: "USD"
 };
-
+//pricelist
 let headerRow = ["Item", "Price"];
 let userArray = [];
 for (const key in priceList) {
-    let userline = "<tr><td>" +  key + "</td><td>" + priceList[key].toLocaleString("en-US", currency) + " ISK</td>";
+    let userline = "<tr><td class='item'>" +  key + "</td><td class='price'>" + priceList[key].toLocaleString("en-US", currency) + " ISK</td>";
     userArray.push(userline);
 };
 let text = userArray.join("</tr>");
 
 
-document.querySelector("#list").innerHTML = `<h3 style='text-align: center'>Prices updated on: ${changeDate} </h3><br><table id='priceTable'><tr><th>${headerRow[0]}</th><th>${headerRow[1]}</th></tr>${text}</table>`;
+document.querySelector("#list").innerHTML = `<h3 style='text-align: center'>Prices updated on: ${changeDate} </h3><br><table><tr><th>${headerRow[0]}</th><th>${headerRow[1]}</th></tr>${text}</table>`;
 
-
+//input fields
 let inputArray = []
 for (const key in priceList) {
-  let line = `${key}: <input type='number' id='${key}' name='${key}' min='0' max='1000000' step='1000' value='0'>`
+  let line = `<tr><td class='item'>${key}:</td><td class='price'><input type='number' id='${key}' name='${key}' min='0' max='1000000' step='1000' value='0'></td>`
   inputArray.push(line);
 };
-let inputOptions = inputArray.join("<br>")
+let inputOptions = inputArray.join("</tr>")
 
-document.querySelector("#inputs").innerHTML = `${inputOptions}<br> <button type="button" onclick="priceCalc()">Calculate</button>
+document.querySelector("#inputs").innerHTML = `<hr><br><table>${inputOptions}</table><button type="button" onclick="priceCalc()">Calculate</button>
 <button type="reset" class="reset">Reset</button></form>`;
 
+//calculator
 function priceCalc() {
   let tritQTY = document.querySelector("#Tritanium").value;
   let tritTOT = tritQTY * priceList.Tritanium;

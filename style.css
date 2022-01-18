@@ -135,9 +135,14 @@ button:hover {
   padding: 1em;
 }
 
-#priceTable table, tr, td{
+.item {
 	padding-inline: 5px;
-	border: 1px grey inset;
+
+}
+
+.price {
+	padding-inline: 5px;
+	text-align: right;
 }
 
 #sellOut {
