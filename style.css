@@ -94,6 +94,10 @@ body {
 	gap: .5em;
 }
 
+.disabled:hover {
+	cursor: not-allowed;
+}
+
 input {
 	background-color: black;
 	width: 70px;

@@ -25,32 +25,25 @@
 			</div>
 			<div class="intNav">
 				<a href="index.html">Home</a>
-				<a href="events.html">Events</a>
-				<a href="buy.html">Buy </a>
+				<a href="buy.html" class="disabled">Buy </a>
 				<a href="sell.html">Sell </a>
-				<a href="faq.html">FAQ </a>
-				<a href="about.html">About POO </a>
+				<a href="faq.html" class="disabled">FAQ </a>
 			</div>
 		</div>
 		<div class="wrapper">
 			<div class="calculator">
 				<h1>Buy things from us...</h1>
           <form action="buy.html" method="GET" class="buy">
-            <div class="list"></div>
-            <div class="inputs">
-              Tritanium
-              <input type="number" id="trit" name="trit" min="0" max="1000000" step="1000" value="0">
-              Pyerite
-              <input type="number" id="py" name="py" min="0" max="1000000" step="1000" value="0">
-              Mexallon
-              <input type="number" id="mex" name="mex" min="0" max="100000" step="100" value="0">
-              <button type="button" onclick="priceCalc()">Calculate</button>
-              <button type="reset" class="reset">Reset</button></form>
-            </div>
+            <div id="list"></div>
+            <div id="inputs"></div>
             <div id="output">
-              Tritanium: (0) units 0.00 ISK <br>
-              Pyerite: (0) units 0.00 ISK <br>
-              Mexallon: (0) units 0.00 ISK <br>
+				Tritanium: (0) units 0.00 ISK <br>
+				Pyerite: (0) units 0.00 ISK <br>
+				Mexallon: (0) units 0.00 ISK <br>
+				Isogen: (0) units 0.00 ISK<br>
+				Megacyte: (0) units 0.00 ISK<br>
+				Zydrine: (0) units 0.00 ISK<br>
+				Nocxium: (0) units 0.00 ISK<br>
               <strong>Grand Total: 0.00 ISK</strong></div><br>
             <textarea name="cpy" id="cpy" cols="30" rows="4" disabled></textarea><br>
             <button type="button" onclick="copyData()" disabled>Copy</button>  

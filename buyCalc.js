@@ -1,9 +1,13 @@
 const changeDate = "1/9/2022";
 const priceList = {
   //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!!!!
-  "Tritanium" : 3.82,
-  "Pyerite" : 14.85,
-  "Mexallon" : 47.32 
+  "Tritanium" :	4.17	,
+  "Pyerite" :	12.98	,
+  "Mexallon" :	66	,
+  "Isogen" :	122.9	,
+  "Megacyte" :	744.9	,
+  "Zydrine" :	1098	,
+  "Nocxium" :	1299	
 };
 
 var currency = {
@@ -20,17 +24,36 @@ for (const key in priceList) {
 let text = userArray.join("</tr>");
 
 
-document.querySelector(".list").innerHTML = "<h3 style='text-align: center'>Prices updated on: " + changeDate + "</h3><br><table id='priceTable'><tr><th>" + headerRow[0] + "</th><th> " + headerRow[1] + "</th></tr>" + text + "</table>";
+document.querySelector("#list").innerHTML = `<h3 style='text-align: center'>Prices updated on: ${changeDate} </h3><br><table id='priceTable'><tr><th>${headerRow[0]}</th><th>${headerRow[1]}</th></tr>${text}</table>`;
+
+
+let inputArray = []
+for (const key in priceList) {
+  let line = `${key}: <input type='number' id='${key}' name='${key}' min='0' max='1000000' step='1000' value='0'>`
+  inputArray.push(line);
+};
+let inputOptions = inputArray.join("<br>")
+
+document.querySelector("#inputs").innerHTML = `${inputOptions}<br> <button type="button" onclick="priceCalc()">Calculate</button>
+<button type="reset" class="reset">Reset</button></form>`;
 
 function priceCalc() {
-  let tritQTY = document.querySelector("#trit").value;
+  let tritQTY = document.querySelector("#Tritanium").value;
   let tritTOT = tritQTY * priceList.Tritanium;
-  let pyQTY = document.querySelector("#py").value;
+  let pyQTY = document.querySelector("#Pyerite").value;
   let pyTOT = pyQTY * priceList.Pyerite;
-  let mexQTY = document.querySelector("#mex").value;
+  let mexQTY = document.querySelector("#Mexallon").value;
   let mexTOT = mexQTY * priceList.Mexallon;
-  let total = tritTOT + pyTOT + mexTOT
-  let ans = "Tritanium: (" + tritQTY + ") units " + tritTOT +" ISK <br>Pyerite: (" + pyQTY + ") units " + pyTOT + " ISK <br>Mexallon: (" + mexQTY + ") units " + mexTOT + " ISK <br><strong>Grand Total: " + total +" ISK</strong></div>";
+  let isoQTY = document.querySelector("#Isogen").value;
+  let isoTOT = tritQTY * priceList.Isogen;
+  let mgQTY = document.querySelector("#Megacyte").value;
+  let mgTOT = pyQTY * priceList.Megacyte;
+  let zyQTY = document.querySelector("#Zydrine").value;
+  let zyTOT = mexQTY * priceList.Zydrine;
+  let noxQTY = document.querySelector("#Nocxium").value;
+  let noxTOT = mexQTY * priceList.Nocxium;
+  let total = tritTOT + pyTOT + mexTOT + isoTOT + mgTOT + zyTOT + noxTOT
+  let ans = `Tritanium: (${tritQTY}) units ${tritTOT.toFixed(2)} ISK <br>Pyerite: (${pyQTY}) units ${pyTOT.toFixed(2)} ISK <br>Mexallon: (${mexQTY}) units ${mexTOT.toFixed(2)} ISK <br>Isogen: (${isoQTY}) units ${isoTOT.toFixed(2)} ISK <br>Megacyte: (${mgQTY}) units ${mgTOT.toFixed(2)} ISK <br>Zydrine: (${zyQTY}) units ${zyTOT.toFixed(2)} ISK <br>Nocxium: (${noxQTY}) units ${noxTOT.toFixed(2)} <br><strong>Grand Total: ${total.toFixed(2)} ISK</strong>`;
 
   document.querySelector("#output").innerHTML = ans;
 
