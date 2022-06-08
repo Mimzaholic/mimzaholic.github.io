@@ -1,13 +1,13 @@
-const changeDate = "1/18/2022";
+const changeDate = "6/8/2022";
 const priceList = {
   //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!!!!
-  "Tritanium" :	4.17	,
-  "Pyerite" :	12.98	,
-  "Mexallon" :	66	,
-  "Isogen" :	122.9	,
-  "Megacyte" :	744.9	,
-  "Zydrine" :	1098	,
-  "Nocxium" :	1299	
+"Tritanium" :	3.30	,
+"Pyerite" :	7.91	,
+"Mexallon" :	60.64	,
+"Isogen" :	358.05	,
+"Megacyte" :	1424.50	,
+"Zydrine" :	1372.80	,
+"Nocxium" :	1108.80	
 };
 
 var currency = {
