@@ -1,4 +1,4 @@
-const changeDate = "2/26/2022";
+const changeDate = "6/8/2022";
 const priceList = {
     //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!
 "Veldspar" : 9.45	,
