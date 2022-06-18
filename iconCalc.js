@@ -1,15 +1,15 @@
-const changeDate = "6/8/2022";
+const changeDate = "6/18/2022";
 const priceList = {
     //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!
-"Veldspar" : 9.45	,
-"Concentrated Veldspar" : 8.20	,
-"Dense Veldspar" : 10.43	,
-"Scordite" : 10.35	,
-"Condensed Scordite" : 9.81	,
-"Massive Scordite" : 9.05	,
-"Pyroxeres" : 19.80	,
-"Solid Pyroxeres" : 17.99	,
-"Viscous Pyroxeres" : 14.72
+    "Veldspar" :	7.25,
+    "Concentrated Veldspar" :	8.44,
+    "Dense Veldspar" :	8.87,
+    "Scordite" :	8.71,
+    "Condensed Scordite" :	8.81,
+    "Massive Scordite" :	12.55,
+    "Pyroxeres" :	18.28,
+    "Solid Pyroxeres" :	16.20,
+    "Viscous Pyroxeres" :	22.45
 };
 
 var currency = {

@@ -1,0 +1,190 @@
+* {
+	border-radius: 5px;
+	font-family: "Barlow Condensed", sans-serif;
+	padding: 0;
+	margin: 0;
+	color: rgba(255, 188, 111, 0.65);
+	text-shadow: 1px 1px 3px black;
+}
+
+body {
+	background-image: url("moon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.topnav {
+	width: 100%;
+	display: flex;
+	position: sticky;
+	top: 0;
+}
+
+.topnav a {
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.logo {
+	margin: 1em 1em 0em 1em;
+	font-size: 1.8em;
+}
+
+.intNav {
+	margin-top: 1em;
+	margin-right: 1em;
+	margin-left: auto;
+}
+
+.intNav a {
+	margin-inline: 1em;
+	vertical-align: middle;
+}
+
+.intNav a:hover {
+	color: white;
+}
+
+.title {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+	margin-inline: auto;
+	text-align: center;
+	font-size: 5vw;
+}
+
+.header {
+	margin-bottom: .5em;
+	margin-inline: auto;
+	text-align: center;
+	font-size: 2vw;
+}
+
+.wrapper {
+  width: 80%;
+  margin-inline: auto;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  background-color: rgba(0, 0, 0, 1);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator h1 {
+  text-align: center;
+}
+
+.list table{
+	margin-inline: auto;
+}
+
+.inputs {
+	padding: .5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	place-items: center;
+	gap: .5em;
+}
+
+.disabled:hover {
+	cursor: not-allowed;
+}
+
+input {
+	background-color: black;
+	width: 70px;
+}
+
+textarea {
+	background-color: black;
+}
+
+.buttonbox {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: black;
+  width: 70px;
+}
+
+button:hover {
+	background-color: green;
+	transition: ease-in-out;
+	transition-duration: 1s;
+}
+
+.reset:hover {
+	background-color: rgba(255, 0, 0, 0.5);
+	transition: ease-in-out;
+	transition-duration: 1s;
+}
+
+#iconvw {
+  background-color: black;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.item {
+	padding-inline: 5px;
+
+}
+
+.price {
+	padding-inline: 5px;
+	text-align: right;
+}
+
+#sellOut {
+	margin: 1em 0;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+/* ---------SCROLLER----------*/
+/* width */
+::-webkit-scrollbar {
+	width: 1vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: black;
+	box-shadow: inset 0 0 5px grey;
+}
+
+#iconCalc::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	width: 3px;
+	background: rgba(70, 70, 70, .7);
+	border: .25em black;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(70, 70, 70, 0.5);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: rgba(0, 0, 0, 0.0);
+}
