@@ -1,15 +1,20 @@
-const changeDate = "6/18/2022";
+const changeDate = "7/16/2022";
 const priceList = {
     //DO NOT USE COMMAS IN THE NUMBERS!!!!!!!!
-    "Veldspar" :	7.25,
-    "Concentrated Veldspar" :	8.44,
-    "Dense Veldspar" :	8.87,
-    "Scordite" :	8.71,
-    "Condensed Scordite" :	8.81,
-    "Massive Scordite" :	12.55,
-    "Pyroxeres" :	18.28,
-    "Solid Pyroxeres" :	16.20,
-    "Viscous Pyroxeres" :	22.45
+    "Veldspar" :	8.64	,
+"Concentrated Veldspar" :	9.00	,
+"Dense Veldspar" :	8.46	,
+"Scordite" :	13.50	,
+"Condensed Scordite" :	10.79	,
+"Massive Scordite" :	10.89	,
+"Pyroxeres" :	22.50	,
+"Solid Pyroxeres" :	22.34	,
+"Viscous Pyroxeres" :	17.10	,
+				
+"Atmospheric Gases" :	859.50	,
+"Evaporite Deposits" :	1305.00	,
+"Hydrocarbons" :	1124.10	,
+"Silicates" :	1665.00
 };
 
 var currency = {
